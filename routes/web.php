@@ -17,4 +17,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+
+Route::get("changeMode", function () {
+    if (session("mode") == "light") {
+        session(["mode"=>  'dark']);
+    } else {
+        session(["mode"=>  'light']);
+    }
+    return back();
+});
+
+
+
+require __DIR__ . '/auth.php';

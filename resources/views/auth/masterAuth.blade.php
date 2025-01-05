@@ -9,9 +9,14 @@
     <link rel="stylesheet" href="{{ asset('index.css') }}">
     <link rel="stylesheet" href="{{ asset('Master.css') }}">
 </head>
-<body class="">
+<body 
+@if (session('mode') == "dark")
+    class="darkMore"
+@endif
+>
+
     @include('auth.Auth_header')
-    <main class="mt50">
+    <main class="mainAuthCmpts">
         @yield('content')
     </main>
 </body>

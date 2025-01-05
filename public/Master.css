@@ -1,8 +1,27 @@
+
+.mainAuthCmpts{
+    /* background-image: url('illustrations/backAuth_img.png'); */
+    background-size: cover;
+    /* height: 1000px; */
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
 .auth_header_style {
     background-color: var(--bg-primary);
-    padding-right: 20px;
+    padding-right: 50px;
 }
-
+.headerBtn:hover>*{
+    color: var(--bg-primary);
+    fill: var(--bg-primary);
+}
+.headerBtn:hover{
+    background-color: var(--bg-secondary);
+    color: var(--bg-primary);
+}
+.headerBtn{
+    border: solid 1px var(--border-color);
+    transition: .2s;
+}
 .logoText {
     font-size: 25px;
     font-weight: 200;
@@ -73,6 +92,16 @@
     transform-origin: bottom right;
     animation: animatteErrorMessage .5s ease;
     display: none;
+}
+.cntFoundedEror p{
+    color: red;
+}
+.cntFoundedEror {
+    position: absolute;
+    bottom: 10px;
+    /* right: 50%; */
+    margin: auto;
+    width: 60%;
 }
 
 @keyframes animatteErrorMessage {
