@@ -19,10 +19,9 @@
     ---: #00bd95;
     --backendColor: rgba(0, 0, 0, 0.201);
     --bg-third: #f7f9f9;
+    --bg-fourth: #e6f6f6;
     --filter-color: #00000019;
     --border-color: #00000036;
-  
-  
   }
   
   .darkMore {
@@ -30,6 +29,7 @@
     --bg-primary: rgb(0, 0, 0);
     --bg-secondary: rgb(255, 255, 255);
     --bg-third: #333333;
+    --bg-fourth: #1f2929;
     --backendColor: rgba(255, 255, 255, 0.081);
     --filter-color: #fffefe29;
     --border-color: #ffffff46;
@@ -412,9 +412,28 @@
   
   input:focus {
   
-    border: solid 1px var(--bg-blue);
+    border: solid 2px var(--bg-blue);
   }
   
+  input.err_inp:checked+label{
+    animation: none !important;
+  }
+  input.err_inp+label{
+    animation: animateInpError 1.5s infinite alternate;
+  }
+ 
+  input.err_inp{
+    border: solid 2px;
+    animation: animateInpError 1.5s infinite alternate;
+  }
+  @keyframes animateInpError {
+    0%{
+      border-color: red;
+    }
+    100%{
+      border-color: rgba(255, 0, 0, 0.248);
+    }
+  }
   input {
     color: var(--bg-secondary);
     width: 300px;
@@ -423,9 +442,12 @@
     font-size: 14px;
     background-color: transparent;
     border-radius: 5px;
-    border: solid 1px var(--border-color);
+    border: solid 2px var(--border-color);
   }
-  
+  input.err_inp:focus{
+    border: solid 2px var(--bg-blue);
+    border-color: var(--bg-blue) !important;
+  }
   textarea:focus {
     border: solid 1px var(--border-colorON);
   }
@@ -475,7 +497,7 @@
   }
   
   .LabelInpInfo input:not(:placeholder-shown) {
-    border: solid 1px var(--bg-blue);
+    border: solid 2px var(--bg-blue);
   }
   
   .LabelInpInfo input {
@@ -590,13 +612,16 @@
     margin-right: 15px;
   }
   
+  .LabelinpCheck.err_inp label{
+    color: red;
+
+  }
   .LabelinpCheck {
     display: flex;
     justify-content: start;
     align-items: center;
     position: relative;
-    width: 100%;
-    max-width: 500px;
+    border: solid 1px transparent;
     margin-bottom: 10px;
   }
   

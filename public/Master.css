@@ -1,15 +1,163 @@
-.cntFormLogin{
+.auth_header_style {
+    background-color: var(--bg-primary);
+    padding-right: 20px;
+}
+
+.logoText {
+    font-size: 25px;
+    font-weight: 200;
+    font-family: "Anton", serif;
+}
+
+.searchInpConteiner input {
+    border: none;
+    margin-left: 10px;
+    width: 600px;
+}
+
+.searchInpConteiner {
+    background-color: var(--bg-fourth);
+    padding: 6px 15px;
+}
+
+.resultSearch_cmp {
+    position: absolute;
+    top: 50px;
+    background-color: #fff;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    overflow: auto;
+    z-index: 5;
+    border-radius: 10px;
+    display: none;
+    animation: animate_resultSearch_cmp .2s alternate;
+    filter: drop-shadow(0px 15px 10px var(--filter-color));
+}
+
+@keyframes animate_resultSearch_cmp {
+    0% {
+        opacity: 0;
+        height: 0;
+    }
+
+}
+
+.searchInpConteiner input:focus+.resultSearch_cmp {
+    display: flex;
+}
+
+/* -------------------------- */
+
+.cntFormLogin {
     max-width: 1500px;
     margin: auto;
-    background-color: rgba(46,83,76,255);
-    margin-top: 100px;
+    background-color: rgba(46, 83, 76, 255);
     filter: drop-shadow(0 0 10px var(--filter-color));
 }
 
 .cntIllustrationImg {
     border-radius: 0 20px 20px 0;
 }
-.cntIllustrationImg img{
+
+.cntIllustrationImg img {
     max-width: 100%;
 
 }
+
+.error_message {
+    position: absolute;
+    top: 10px;
+    right: 50%;
+    border-radius: 20px 20px 0 20px;
+    transform-origin: bottom right;
+    animation: animatteErrorMessage .5s ease;
+    display: none;
+}
+
+@keyframes animatteErrorMessage {
+    0% {
+        transform: scale3d(0, 0, 1)
+    }
+    80% {
+        transform: scale3d(1, .1, 1) ;
+    }
+    100% {
+        transform: scale3d(1, 1.2, 1);
+    }
+}
+
+/* ------- REGISTER *---------- */
+
+.cntFormRegister {
+    max-width: 1500px;
+    margin: auto;
+    background-color: rgba(46, 83, 76, 255);
+    filter: drop-shadow(0 0 10px var(--filter-color));
+}
+
+.cnt_inp_Gender input:checked+label .iconeDoneSelect {
+    display: block;
+    position: absolute;
+    right: 5px;
+    margin-left: 10px;
+}
+
+.cnt_inp_Gender input:checked+label svg {
+    fill: var(--bg-blue);
+
+}
+
+.cnt_inp_Gender input:checked+label>* {
+    color: var(--bg-blue);
+
+}
+
+.cnt_inp_Gender input:checked+label {
+    border-color: var(--bg-blue);
+    color: var(--bg-blue);
+
+}
+
+.cnt_inp_Gender label .iconeDoneSelect {
+    display: none;
+}
+
+.cnt_inp_Gender label {
+    width: 30%;
+    padding: 6px;
+    text-align: center;
+    border: solid 1px var(--border-color);
+}
+
+.cnt_inp_Gender input {
+    display: none !important;
+}
+
+.cnt_inp_BirthDay label {
+    position: absolute;
+    left: 8px;
+}
+
+.cnt_inp_BirthDay input:not(:placeholder-shown) {
+    border-color: var(--bg-blue);
+}
+
+.cnt_inp_BirthDay input:not(:placeholder-shown)+label,
+.cnt_inp_BirthDay input:focus+label {
+    transform: translateY(-14px);
+    color: var(--bg-blue);
+}
+
+.cnt_inp_BirthDay input {
+    padding-top: 20px;
+    width: 100%;
+}
+
+.cnt_inp_BirthDay {
+    width: 32%;
+}
+.displayFlex {
+    display: flex;
+  }
+  
