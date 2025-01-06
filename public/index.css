@@ -19,7 +19,8 @@
     ---: #00bd95;
     --backendColor: rgba(0, 0, 0, 0.201);
     --bg-third: #f8f9f9;
-    --bg-fourth: #ebf5fb;
+    --bg-fourth: #eaededa0;
+    --bg-fourth-hover: #eaededef;
     --filter-color: #00000019;
     --border-color: #00000036;
   }
@@ -122,6 +123,16 @@
   
   .bg-third {
     background-color: var(--bg-third);
+  }
+  
+  .bg-fourth:hover{
+    cursor: pointer;
+    background-color: var(--bg-fourth-hover);
+
+  }
+  .bg-fourth {
+    transition: .2s;
+    background-color: var(--bg-fourth);
   }
   
   .bg-->* {

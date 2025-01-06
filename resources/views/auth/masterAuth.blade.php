@@ -15,9 +15,10 @@
 @endif
 >
 
-    @include('auth.Auth_header')
+@include('auth.Auth_header')
     <main class="mainAuthCmpts">
         @yield('content')
     </main>
+    @include('footer')
 </body>
 </html>

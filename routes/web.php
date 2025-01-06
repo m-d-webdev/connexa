@@ -7,9 +7,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/home', function () {
+    return view('home');
+})->middleware(['auth', 'verified'])->name('home');
+Route::get('/reels', function () {
+    return view('reels');
+})->middleware(['auth', 'verified'])->name('reels');
+Route::get('/videos', function () {
+    return view('videos');
+})->middleware(['auth', 'verified'])->name('videos');
+Route::get('/news', function () {
+    return view('news');
+})->middleware(['auth', 'verified'])->name('news');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

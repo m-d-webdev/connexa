@@ -29,7 +29,7 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        
+
         $request->validate([
             'firstName' => 'required|string|max:255',
             'lasttName' => 'required|string|max:255',
@@ -39,7 +39,7 @@ class RegisteredUserController extends Controller
             'month' => 'required|numeric',
             'phone' => 'required|numeric',
             'acceptterms' => 'required',
-            'email' => 'required|string|lowercase|email|max:255|unique:'.User::class,
+            'email' => 'required|string|lowercase|email|max:255|unique:' . User::class,
             'password' => 'required',
         ]);
 
@@ -47,15 +47,18 @@ class RegisteredUserController extends Controller
             'firstName' => $request->firstName,
             'lastName' => $request->lasttName,
             'gender' => $request->gender,
-            'birthDay' => $request->day.'/'.$request->month."/".$request->year,
+            'birthDay' => $request->day . '/' . $request->month . "/" . $request->year,
             'phone' => $request->phone,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
         event(new Registered($user));
+        if ($request->has("remember")) {
+            Auth::login($user, true);
+        } else {
+            Auth::login($user);
+        }
 
-        Auth::login($user);
-
-        return redirect(route('dashboard', absolute: false));
+        return redirect(route('home', absolute: false));
     }
 }

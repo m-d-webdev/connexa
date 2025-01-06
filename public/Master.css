@@ -1,27 +1,33 @@
-
-.mainAuthCmpts{
+.mainAuthCmpts {
     /* background-image: url('illustrations/backAuth_img.png'); */
     background-size: cover;
     /* height: 1000px; */
     padding-top: 50px;
     padding-bottom: 70px;
 }
+
 .auth_header_style {
+    max-width: 1500px;
     background-color: var(--bg-primary);
-    padding-right: 50px;
+    /* padding-right: 50px; */
+    margin: auto;
 }
-.headerBtn:hover>*{
+
+.headerBtn:hover>* {
     color: var(--bg-primary);
     fill: var(--bg-primary);
 }
-.headerBtn:hover{
+
+.headerBtn:hover {
     background-color: var(--bg-secondary);
     color: var(--bg-primary);
 }
-.headerBtn{
+
+.headerBtn {
     border: solid 1px var(--border-color);
     transition: .2s;
 }
+
 .logoText {
     font-size: 25px;
     font-weight: 200;
@@ -31,12 +37,13 @@
 .searchInpConteiner input {
     border: none;
     margin-left: 10px;
-    width: 600px;
+    width: 100%;
 }
 
 .searchInpConteiner {
     background-color: var(--bg-fourth);
     padding: 6px 15px;
+    width: 60%;
 }
 
 .resultSearch_cmp {
@@ -93,9 +100,11 @@
     animation: animatteErrorMessage .5s ease;
     display: none;
 }
-.cntFoundedEror p{
+
+.cntFoundedEror p {
     color: red;
 }
+
 .cntFoundedEror {
     position: absolute;
     bottom: 10px;
@@ -108,9 +117,11 @@
     0% {
         transform: scale3d(0, 0, 1)
     }
+
     80% {
-        transform: scale3d(1, .1, 1) ;
+        transform: scale3d(1, .1, 1);
     }
+
     100% {
         transform: scale3d(1, 1.2, 1);
     }
@@ -186,7 +197,35 @@
 .cnt_inp_BirthDay {
     width: 32%;
 }
+
 .displayFlex {
     display: flex;
-  }
-  
+}
+
+/* -----------------  DASHBOARD ------------------- */
+.navSectionIcone {
+    padding: 6px 15px;
+}
+.navSectionIcone.active p {
+    /* display: block; */
+}
+
+.navSectionIcone.active svg{
+    /* fill: var(--bg-primary); */
+}
+.navSectionIcone.active::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: var(--bg-secondary);
+    height: 3px;
+    border-radius: 100px;
+}
+.navSectionIcone.active{
+    border-radius: 0;
+    position: relative;
+    padding-bottom: 10px;
+    background-color: transparent;
+}
